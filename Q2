@@ -1,0 +1,18 @@
+def is_palindrome(s):
+    return s == s[::-1]  # Check if the string is the same when reversed
+
+def main():
+    while True:
+        user_input = input("Enter a string to check if it's a palindrome (or type 'q' to quit): ").strip().lower()
+        
+        if user_input == 'q':
+            print("Goodbye!")
+            break
+
+        if is_palindrome(user_input):
+            print(f"The string '{user_input}' is a palindrome.")
+        else:
+            print(f"The string '{user_input}' is not a palindrome.")
+
+if __name__ == "__main__":
+    main()
