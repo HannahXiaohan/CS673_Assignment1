@@ -1,0 +1,34 @@
+import ast
+
+def merge_alternating(list1, list2):
+    merged_list = [item for pair in zip(list1, list2) for item in pair]
+    return merged_list
+
+def main():
+    try:
+        # Get user input
+        list1_input = input("Enter the first list in format [a,b,c]: ")
+        list2_input = input("Enter the second list in format [1,2,3]: ")
+
+        # Convert string input to actual lists
+        list1 = ast.literal_eval(list1_input)
+        list2 = ast.literal_eval(list2_input)
+
+        # Validate that inputs are lists and have equal length
+        if not isinstance(list1, list) or not isinstance(list2, list):
+            print("Error: Both inputs must be lists.")
+            return
+
+        if len(list1) != len(list2):
+            print("Error: Lists must be of equal length.")
+            return
+
+        # Merge lists by alternating elements
+        merged_list = merge_alternating(list1, list2)
+        print("Merged List:", merged_list)
+
+    except (SyntaxError, ValueError):
+        print("Error: Invalid input format. Please enter lists in the correct format.")
+
+if __name__ == "__main__":
+    main()
