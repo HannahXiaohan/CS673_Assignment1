@@ -1,0 +1,15 @@
+def generate_fibonacci(n):
+    fibonacci_numbers = [1, 1] 
+    for _ in range(n - 2): 
+        fibonacci_numbers.append(fibonacci_numbers[-1] + fibonacci_numbers[-2])
+    return fibonacci_numbers
+
+def main():
+    num_terms = 100
+    fibonacci_list = generate_fibonacci(num_terms)
+
+    print("The first 100 Fibonacci numbers are:")
+    print(fibonacci_list)
+
+if __name__ == "__main__":
+    main()
